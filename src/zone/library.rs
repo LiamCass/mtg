@@ -1,12 +1,12 @@
-// library.rs
+// src/zone/library.rs
 use uuid::Uuid;
+use crate::object::card::CardId;
+use crate::object::token::TokenId;
+use crate::object::copy::CopyId;
 
-/// Uniquely identifies a specific library instance in the game.
-/// Rule 401: each player has their own library.
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
 pub enum LibraryId { Id(Uuid) }
 
-/// The closed set of object kinds that can occupy the Library zone.
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
 pub enum LibraryContent {
     Card(CardId),
@@ -14,7 +14,6 @@ pub enum LibraryContent {
     Copy(CopyId),
 }
 
-/// A player's library (rule 401): a hidden, per-player, strictly ordered zone.
 pub struct Library {
     pub id: LibraryId,
     pub contents: Vec<LibraryContent>,

@@ -1,12 +1,13 @@
-// hand.rs
+// src/zone/hand.rs
 use uuid::Uuid;
 use std::collections::HashSet;
+use crate::object::card::CardId;
+use crate::object::token::TokenId;
+use crate::object::copy::CopyId;
 
-/// Rule 402: each player has their own hand.
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
 pub enum HandId { Id(Uuid) }
 
-/// The closed set of object kinds that can occupy the Hand zone.
 #[derive(Hash, Eq, PartialEq, Copy, Clone, Debug)]
 pub enum HandContent {
     Card(CardId),
@@ -14,7 +15,6 @@ pub enum HandContent {
     Copy(CopyId),
 }
 
-/// A player's hand (rule 402): a hidden, per-player zone.
 pub struct Hand {
     pub id: HandId,
     pub contents: HashSet<HandContent>,
