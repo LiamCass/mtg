@@ -4,4 +4,5 @@ pub mod card;
 pub mod copy;
 pub mod deck;
 pub mod emblem;
+pub mod junkyard;
 pub mod token;
