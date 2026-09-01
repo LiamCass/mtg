@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 /*Game formats
 Options
 - Range of Influence always tracked per player. defaults to inf
@@ -21,6 +19,7 @@ Options
 905. Conspiracy Draft
 */
 
+// use std::collections::HashSet;
 // impl Game {
 //     // 103. Starting the Game
 //     pub fn setup(&mut self) {
