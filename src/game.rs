@@ -21,35 +21,6 @@ Options
 905. Conspiracy Draft
 */
 
-/// 806-811: Multiplayer structure a Game is played under.
-/// Mutually exclusive — a Game has exactly one, defaulting to standard 1v1.
-#[derive(Clone, Copy, PartialEq, Eq, Hash)]
-enum Format {
-    FreeForAll,       // 806
-    GrandMelee,       // 807
-    TeamVsTeam,       // 808
-    Emperor,          // 809
-    TwoHeadedGiant,   // 810
-    AlternatingTeams, // 811
-}
-
-/// 901-905: Additive game variants layered on top of a Format.
-/// A Game may have zero or more of these active simultaneously.
-#[derive(Clone, Copy, PartialEq, Eq, Hash)]
-enum Variant {
-    Planechase,      // 901
-    Vanguard,        // 902
-    Commander,       // 903
-    Archenemy,       // 904
-    ConspiracyDraft, // 905
-}
-
-pub struct Game {
-    pub format: Format,
-    pub variants: HashSet<Variant>,
-    // ... your existing fields
-}
-
 impl Game {
     // 103. Starting the Game
     pub fn setup(&mut self) {
